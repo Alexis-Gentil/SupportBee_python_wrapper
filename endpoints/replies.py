@@ -17,13 +17,11 @@ class Replies(Resource):
                attachment_ids:     str  = None,
                on_behalf_of_id:    str  = None,
                on_behalf_of_email: str  = None,
-               notify_requester:   str  = False,
                content_as_html:    bool = False):
         reply = {
             "content": {
                 "html" if content_as_html else "text": content,
             },
-            "notify_requester": notify_requester
         }
 
         if cc is not None:
